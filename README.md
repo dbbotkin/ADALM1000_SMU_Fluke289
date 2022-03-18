@@ -11,3 +11,5 @@ What does the Python script accomplish?
 5) It shows how to get useful data from the M1k on two channels
 6) It shows how to print the output data
 7) It shows how to open a CSV file and write data to it (that is the easy part)
+
+OK, the M1k is designed for education and hobby use: a 5V 200mA SMU for demonstrating basic EE concepts. Right. And if you need 1000V or 10A, there are several SMU's from Keithley--starting at $5,000. Used on eBay go for $2,000 up. For many of my measurement tasks, a ten volt, four hundred mAmp range is more than enough. 
