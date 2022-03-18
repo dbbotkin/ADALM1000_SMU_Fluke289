@@ -2,7 +2,7 @@ import time
 import os
 from io import open
 import pysmu
-from pysmu import Mode #Session, 
+from pysmu import Mode
 import serial
 
 ''' SMU Voltage Range Settings 'from low to hi" USER can set in range from -5V to +5V'''
