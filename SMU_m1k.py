@@ -45,7 +45,7 @@ def QM():
         data = (DMM.read(32).decode('utf-8'))        
         return ((data.split(','))[0][1:]) # dont change this
     
-# NOT USED Justin case there might be multi[ple ADALM1000 devices (for FYI only)   
+# NOT USED Just in case there might be multi[ple ADALM1000 devices (for FYI only)   
 def list_devices(session, args):
     """List all devices in a session."""
     for i, dev in enumerate(session.devices):
