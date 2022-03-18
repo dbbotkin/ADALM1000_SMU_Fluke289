@@ -2,4 +2,4 @@
 This combines the Fluke 289 DMM with the ADLAM1000 module SMU
 
 The Fluke 289 is a large, expensive hand-held industrial DMM; the Analog Devices AALM1000 is a tiny, under $100US source-measure unit.
-What do they have in common? Quality components and microAmp precision.
+What do they have in common? Quality components and microAmp precision. Add a Python script to get them talking, and you have a working SMU for hobby projects, whatever.
