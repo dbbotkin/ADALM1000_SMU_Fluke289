@@ -5,10 +5,10 @@ import pysmu
 from pysmu import Mode
 import serial
 
-''' SMU Voltage Range Settings 'from low to hi" USER can set in range from -5V to +5V'''
+'''SMU Voltage Range Settings 'from low to hi" USER can set in range from -5V to +5V'''
 lowVolt = -5
 hiVolt =  5
-precision = 1 
+precision = .1 
 ''' 1.0, 0.10 or 0.01 the number of decimal placees--will affect number of samples'''
 
 ''' Setup serial USB to Fluke 289 DMM'''
@@ -76,19 +76,17 @@ def out_file(v_a,v_b):
     session.start(0)
     chan_a.constant(v_a)
     chan_b.constant(v_b)
-    #if v_b == 5: debug
-    time.sleep(2)
+    time.sleep(.1)
     amps = QM()    
-    time.sleep(0)
     volt = v_a - v_b
     data = ()
     for x in smu.read(1):    
-        out_data = ((x[0][0], x[0][1], x[1][0], x[1][1]))
+        out_data = ((format(x[0][0],'E')), (format(x[0][1],'E')), (format(x[1][0],'E')), (format(x[1][1],'E')))
         data = (str(out_data).replace('(',''))
-        time.sleep(.1)
-        if len(data) > 0:
-            print (str(round(volt,2)) + ', ' + str(amps)+', '+ str(data.replace(')','')))
-            file.write(str(round(volt,2)) +', ' + str(amps) +', ' + str(data).replace(')','')+'\n')
+        data = (data.replace(')',''))
+        data = (data.replace('\'',''))
+        print (str(round(volt,2)) + ', ' + (amps)+', '+ ((data)))
+        file.write(str(round(volt,2)) +', ' + (amps) +', ' + (data) +'\n')
 
 # deal with negative voltage
 if lowVolt < 0 and hiVolt > 0:
